@@ -27,7 +27,7 @@ class MarkdownConverterGUI:
 
     def __init__(self, root):
         self.root = root
-        self.root.title("MarkItDown GUI Converter")
+        self.root.title("Anything Markdown")
         self.root.geometry("800x750")  # 初期サイズを設定
         self.root.resizable(True, True)  # ウィンドウのリサイズを許可
         self.use_chatgpt = tk.BooleanVar()
