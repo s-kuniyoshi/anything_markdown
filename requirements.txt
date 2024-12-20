@@ -1,0 +1,6 @@
+tk
+markitdown
+openai
+pandas
+openpyxl
+Pillow

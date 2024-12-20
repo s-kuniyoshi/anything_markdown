@@ -1,0 +1,44 @@
+// .devcontainer/devcontainer.json
+
+{
+    "name": "Markdown Converter Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "settings": {
+            "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        "extensions": [
+            "ms-python.python",
+            "ms-azuretools.vscode-docker"{
+                "name": "Markdown Converter Dev Container",
+                "build": {
+                    "dockerfile": "Dockerfile",
+                    "context": ".."
+                },
+                "settings": {
+                    "terminal.integrated.shell.linux": "/bin/bash"
+                },
+                "extensions": [
+                    "ms-python.python",
+                    "ms-azuretools.vscode-docker"
+                ],
+                "forwardPorts": [],
+                "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+                "remoteUser": "root",
+                "mounts": [
+                    "source=${localEnv:HOME},target=/host,type=bind,consistency=cached"
+                ]
+            }
+            
+        ]    
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    "remoteUser": "root",
+    "mounts": [
+        "source=${localEnv:USERPROFILE},target=/host,type=bind,consistency=cached"
+    ]
+}
